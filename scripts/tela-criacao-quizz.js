@@ -28,26 +28,27 @@ function renderizarCriacaoQuiz(){
 }
 
 function renderizarCriacaoPerguntas(){
+    if(capturaDadosPagina1()){
+        const tela = document.querySelector(".container-criacao-quizz");
+        tela.innerHTML = `
+            <p class="titulo-tela-criacao">Crie suas perguntas</p>
+            <div class="criacao-quizz">
+                <p class="texto-tela-criacao">Pergunta 1</p>
+                <input type="text" class="titulo-quiz" placeholder="Título do seu quizz">
+                <input type="text" class="cor-fundo" placeholder="Cor de fundo da pergunta">
+                <p class="texto-tela-criacao">Resposta correta</p>
+                <input type="text" class="resposta-incorreta-1" placeholder="Resposta incorreta 1">
+                <input type="text" class="url-imagem-1" placeholder="URL da imagem 1">
 
-    const tela = document.querySelector(".container-criacao-quizz");
-    tela.innerHTML = `
-        <p class="titulo-tela-criacao">Crie suas perguntas</p>
-        <div class="criacao-quizz">
-            <p class="texto-tela-criacao">Pergunta 1</p>
-            <input type="text" class="titulo-quiz" placeholder="Título do seu quizz">
-            <input type="text" class="cor-fundo" placeholder="Cor de fundo da pergunta">
-            <p class="texto-tela-criacao">Resposta correta</p>
-            <input type="text" class="resposta-incorreta-1" placeholder="Resposta incorreta 1">
-            <input type="text" class="url-imagem-1" placeholder="URL da imagem 1">
+                <input type="text" class="resposta-incorreta-2" placeholder="Resposta incorreta 2">
+                <input type="text" class="url-imagem-2" placeholder="URL da imagem 2">
 
-            <input type="text" class="resposta-incorreta-2" placeholder="Resposta incorreta 2">
-            <input type="text" class="url-imagem-2" placeholder="URL da imagem 2">
-
-            <input type="text" class="resposta-incorreta-3" placeholder="Resposta incorreta 3">
-            <input type="text" class="url-imagem-3" placeholder="URL da imagem 3">
-        </div>
-        <button class="botao-criacao-quizz" onclick="renderizarFinalizacaoQuiz()">Prosseguir pra criar perguntas</button>
-    `;
+                <input type="text" class="resposta-incorreta-3" placeholder="Resposta incorreta 3">
+                <input type="text" class="url-imagem-3" placeholder="URL da imagem 3">
+            </div>
+            <button class="botao-criacao-quizz" onclick="renderizarFinalizacaoQuiz()">Prosseguir pra criar perguntas</button>
+        `;
+    }
 }
 
 function renderizarFinalizacaoQuiz(){
@@ -74,8 +75,9 @@ function renderizarQuizPronto(){
     const tela = document.querySelector(".container-criacao-quizz");
     tela.innerHTML = `
         <p class="titulo-tela-criacao">Seu quizz está pronto!</p>
-        <p class="titulo-imagem">O quão Potterhead é você?</p>
-
+        <div class = "capa-imagem-quizz" style="background-image:url('./media/Rectangle 34.png') ;">
+            <p class="titulo-imagem" >O quão Potterhead é você?</p>
+        </div>
         <button class="botao-criacao-quizz" onclick="renderizarCriacaoPerguntas()">Acessar Quizz</button>
         <button class="botao-voltar" onclick="desabilitarCriacaoQuizz()">Voltar pra home</button>
     `
