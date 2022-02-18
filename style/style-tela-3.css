@@ -39,6 +39,14 @@
     justify-content: center;
 }
 
+.container-criacao-quizz form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}   
+
 .criacao-quizz input{
     width: 375px;
     height: 46px;
