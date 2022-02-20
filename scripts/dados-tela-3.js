@@ -39,7 +39,7 @@ function renderizarPerguntasExtras(numero){
 
 function perguntaNumero(numero){
     let pergunta =  `
-        <div class="caixa-pergunta">
+        <div class="caixa-pergunta tagPergunta${numero}">
             <p class="texto-tela-criacao">Pergunta ${numero}</p>
             <input type="text" class="titulo-quiz" placeholder="Título do seu quizz" minlength="20" required>
             <input type="text" class="cor-fundo" placeholder="Cor de fundo da pergunta"  required>
@@ -52,7 +52,7 @@ function perguntaNumero(numero){
             <input type="url" class="url-imagem-1" placeholder="URL da imagem 1" required>
 
             <input type="text" class="resposta-incorreta-2" placeholder="Resposta incorreta 2">
-            <input type="url" class="url-imagem-2" placeholder="URL da imagem 3">
+            <input type="url" class="url-imagem-2" placeholder="URL da imagem 2">
 
             <input type="text" class="resposta-incorreta-3" placeholder="Resposta incorreta 3">
             <input type="url" class="url-imagem-3" placeholder="URL da imagem 3">
@@ -68,20 +68,39 @@ let tela3form3 = `
     <p class="titulo-tela-criacao">Agora, decida os níveis!</p>
     <form action="">
         <div class="criacao-quizz">
-        <p class="texto-tela-criacao">Nivel 1</p>
-            <input type="text" class="nome" placeholder="Título do nível" minlength="10" required>
-            <input type="number" class="acertos" placeholder="% de acerto mínima" min="0" max="100" required>
-            <input type="url" class="url-image-nivel" placeholder="URL da imagem do nível" required>
-            <input type="text" class="descrisao-niveis" placeholder="Descrição do nível" minlength="10" required>
+            <div class="nivel">
+            </div>
         </div>  
-
-        <div class="nivel-add"><p>Nivel 2</p> <ion-icon name="open-outline"></ion-icon></div>
-
-        <div class="nivel-add"><p>Nivel 3</p> <ion-icon name="open-outline"></ion-icon></div>
 
         <button class="botao-criacao-quizz" type="submit">Finalizar Quizz</button>
     </form>
 `;
+
+function nivelNumero(numero){
+    let nivel = `
+        <div class="caixa-nivel tagNivel${numero}">
+            <p class="texto-tela-criacao">Nivel ${numero}</p>
+            <input type="text" class="nome" placeholder="Título do nível" minlength="10" required>
+            <input type="number" class="acertos" placeholder="% de acerto mínima" min="0" max="100" required>
+            <input type="url" class="url-image-nivel" placeholder="URL da imagem do nível" required>
+            <input type="text" class="descrisao-niveis" placeholder="Descrição do nível" minlength="10" required>
+        </div>
+    `
+
+    return nivel;
+}
+
+function renderizarNivelExtras(numero){
+    let nivel = "";
+    
+    for(let i= 0; i<numero;i++){
+        nivel = nivel  + `
+        <div class="nivel-add" onclick="sobreescreverNivel(this,${2+i})"><p>Nivel ${2+i}</p><ion-icon name="open-outline"></ion-icon></div>
+        `
+    }
+
+    return nivel;
+}
 
 let tela3form4 = `
     <p class="titulo-tela-criacao">Seu quizz está pronto!</p>
