@@ -13,8 +13,6 @@
   <link href="style/style-tela-2.css" rel="stylesheet">
   <link href="style/style-tela-3.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="./style/style-criacao-quizz.css">
-
   <!--FONTS-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +24,7 @@
 </head>
 
 <body>
-  <header onclick="desabilitarCriacaoQuizz()">
+  <header onclick="returnHome()">
     <section class="titulo">BuzzQuizz</section>
   </header>
 
@@ -47,141 +45,28 @@
         <img onclick="addNewQuizz()" src="/media/add_button.png" alt="Criar um novo Quizz">
       </section>
 
-      <article class="quizz_box">
-        <h1 class="titulo_quizz">Acerte os personagens corretos dos Simpsons e prove seu amor!</h1>
-      </article>
-      <article class="quizz_box">
-        <h1 class="titulo_quizz">Acerte os personagens corretos dos Simpsons e prove seu amor!</h1>
-      </article>
-
 
       <section class="all_quizzes">
         <h1 class="titulo_grupo">Todos os Quizzes</h1>
-      </section>
 
-      <article class="quizz_box">
-        <h1 class="titulo_quizz">Acerte os personagens corretos dos Simpsons e prove seu amor!</h1>
+      <article class="quizz_box quiz">
+
       </article>
-      <article class="quizz_box">
-        <h1 class="titulo_quizz">Acerte os personagens corretos dos Simpsons e prove seu amor!</h1>
-      </article>
-      <article class="quizz_box">
-        <h1 class="titulo_quizz">Acerte os personagens corretos dos Simpsons e prove seu amor!</h1>
-      </article>
-      <article class="quizz_box">
-        <h1 class="titulo_quizz">Acerte os personagens corretos dos Simpsons e prove seu amor!</h1>
-      </article>
+
+    </section>
+
 
     </section> 
 
 <!---------------------------------- TELA 2 - QUIZZ QUESTIONS ------------------------------------->
 
     <section class="tela_2 hidden">
-      <div class="banner"></div>
 
-      <nav class="full_question_box">
-        <div class="pergunta_box">
-          <h1>asdasdsadsadsadsadasdsdadasasdasdsadsdasdsaa dasdsadasdsasadsadsadsadasd  sasdasdsads CONSERTAR OVERFLOW & LINEBREAK adasdsadsadsadsadsadsdasda asdsadsadsadsadsadasdsadds</h1>
-        </div>
+      <div class="page-quiz">
 
-        <ol class="options_box">
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-        </ol>
-      </nav>
-
-      <nav class="full_question_box">
-        <div class="pergunta_box">
-          <h1>Acerte os personagens corretos dos Simpsons e prove seu amor!</h1>
-        </div>
-
-        <ol class="options_box">
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-        </ol>
-      </nav>
-
-      <nav class="full_question_box">
-        <div class="pergunta_box">
-          <h1 class="pergunta">asdasdsadsadsadsadasdsdadasasdasdsadsdasdsaa dasdsadasdsasadsadsadsadasd  sasdasdsads CONSERTAR OVERFLOW & LINEBREAK adasdsadsadsadsadsadsdasda asdsadsadsadsadsadasdsadds</h1>
-        </div>
-
-        <ol class="options_box">
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-          <li class="option">
-            <div class="img_option" onclick="select_option()"></div>
-              <a class="name_option">Doguinho</a>
-          </li>
-        </ol>
-      </nav>
-
-      <nav class="result_box">
-        <div class="percentage_box">
-          <h1>88% de acerto: Você é praticamente um aluno de Hogwarts!</h1>
-        </div>
-
-        <img src="/media/green.jpg" alt="">
-
-        <h2>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.</h2>
-      </nav>
-
-      <nav>
-        <button class="reiniciar_quizz">
-          <h1>Reiniciar Quizz</h1>
-        </button>
-
-        <div class="voltar_home">
-          <h1>Voltar pra home</h1>
-        </div>
-      </nav>
+    </div>
 
     </section>
-
-
-
-
-  
-
-  
 
   <!---------------------------------- Pagina 3 - QUIZZ CREATION  ------------------------------------->
 
@@ -198,11 +83,15 @@
   <!--API-->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <!--Srcipts-->
-  <script src="script.js"></script>
+
+
+  <script src="./scripts/get-quizz-tela1-&-tela2.js"></script>
+  <!-- <script src="./scripts/dados-tela-2.js"></script> -->
   <script src="./scripts/dados-tela-3.js"></script>
   <script src="./scripts/transcisao-tela.js"></script>
   <script src="./scripts/captura-dados-tela-3.js"></script>
   <script src="./scripts/tela-criacao-quizz.js"></script>
+  
   
 </body>
 

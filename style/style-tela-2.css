@@ -1,6 +1,6 @@
 /* --------------------------- TELA 2 --------------------------- */
 
-.tela_2{
+.page-quiz{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,8 +14,22 @@
     position: relative;
     width: 100vw;
     height: 142px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/media/banner1.png);
 }
+
+.banner img{
+    position: absolute;
+}
+
+.banner h1{
+    position: absolute;
+    font-family: Roboto;
+    font-size: 19px;
+    line-height: 22px;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
 
 /* --------- FULL QUESTION --------- */
 .full_question_box{
