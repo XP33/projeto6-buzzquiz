@@ -4,10 +4,10 @@ function habilitarCriacaoQuizz(){
     renderizarTela2();
 }
 
-function desabilitarCriacaoQuizz(){
+function returnHome(){
     habilitarTela("tela_1");
     desabilitarTela("tela_3");
-
+    desabilitarTela("tela_2");
 }
 
 function renderizarTela1(){
