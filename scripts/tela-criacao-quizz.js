@@ -1,7 +1,7 @@
 function habilitarCriacaoQuizz(){
     habilitarTela("tela_3");
     desabilitarTela("tela_1");
-    renderizarTela3();
+    renderizarTela1();
 }
 
 function returnHome(){
@@ -103,6 +103,7 @@ function sobreescreverNivel(elemento,numero){
 function renderizarTela4(){
     const tela = document.querySelector(".container-criacao-quizz");
     tela.innerHTML = tela3form4;
+    console.log(quizz);
 }
 
 function capturaPagina1(){
@@ -112,10 +113,9 @@ function capturaPagina1(){
 
     quizz.title = elements[0].value;
     quizz.image = elements[1].value;
-    qtdPerguntas = elements[2].value+1;
-    qtdNiveis = elements[3].value+1;
+    qtdPerguntas =parseInt(elements[2].value);
+    qtdNiveis =parseInt(elements[3].value);
 
-    console.log(elements);
 }
  
 function capturaPagina2(){

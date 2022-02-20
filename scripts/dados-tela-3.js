@@ -107,6 +107,6 @@ let tela3form4 = `
     <div class = "capa-imagem-quizz" style="background-image:url('./media/Rectangle 34.png') ;">
         <p class="titulo-imagem" >O quão Potterhead é você?</p>
     </div>
-    <button class="botao-criacao-quizz" onclick="renderizarCriacaoPerguntas()">Acessar Quizz</button>
+    <button class="botao-criacao-quizz" onclick="enviarQuizz()">Acessar Quizz</button>
     <button class="botao-voltar" onclick="desabilitarCriacaoQuizz()">Voltar pra home</button>
 `;
