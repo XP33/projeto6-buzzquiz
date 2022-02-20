@@ -39,22 +39,24 @@ function renderizarPerguntasExtras(numero){
 
 function perguntaNumero(numero){
     let pergunta =  `
-        <p class="texto-tela-criacao">Pergunta ${numero}</p>
-        <input type="text" class="titulo-quiz" placeholder="Título do seu quizz" minlength="20" required>
-        <input type="text" class="cor-fundo" placeholder="Cor de fundo da pergunta"  required>
-        <p class="texto-tela-criacao">Resposta correta</p>
-        <input type="text" class="resposta-correta" placeholder="Resposta correta" required>
-        <input type="url" class="url-imagem" placeholder="URL da imagem 1" required>
+        <div class="caixa-pergunta">
+            <p class="texto-tela-criacao">Pergunta ${numero}</p>
+            <input type="text" class="titulo-quiz" placeholder="Título do seu quizz" minlength="20" required>
+            <input type="text" class="cor-fundo" placeholder="Cor de fundo da pergunta"  required>
+            <p class="texto-tela-criacao">Resposta correta</p>
+            <input type="text" class="resposta-correta" placeholder="Resposta correta" required>
+            <input type="url" class="url-imagem" placeholder="URL da imagem 1" required>
 
-        <p class="texto-tela-criacao">Resposta Incorretas</p>
-        <input type="text" class="resposta-incorreta-1" placeholder="Resposta incorreta 1" required>
-        <input type="url" class="url-imagem-1" placeholder="URL da imagem 1" required>
+            <p class="texto-tela-criacao">Resposta Incorretas</p>
+            <input type="text" class="resposta-incorreta-1" placeholder="Resposta incorreta 1" required>
+            <input type="url" class="url-imagem-1" placeholder="URL da imagem 1" required>
 
-        <input type="text" class="resposta-incorreta-2" placeholder="Resposta incorreta 2">
-        <input type="url" class="url-imagem-2" placeholder="URL da imagem 3">
+            <input type="text" class="resposta-incorreta-2" placeholder="Resposta incorreta 2">
+            <input type="url" class="url-imagem-2" placeholder="URL da imagem 3">
 
-        <input type="text" class="resposta-incorreta-3" placeholder="Resposta incorreta 3">
-        <input type="url" class="url-imagem-3" placeholder="URL da imagem 3">
+            <input type="text" class="resposta-incorreta-3" placeholder="Resposta incorreta 3">
+            <input type="url" class="url-imagem-3" placeholder="URL da imagem 3">
+        </div>
     `
 
     return pergunta;
