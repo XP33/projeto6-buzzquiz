@@ -83,6 +83,8 @@ function displayQuiz(response) {
 
     quizPageEl.innerHTML += templateQuizGeneralInfo
 
+    document.querySelector(".banner").scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
+
 }
 
 function clickCardAnswer(answer) {

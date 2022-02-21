@@ -108,5 +108,5 @@ let tela3form4 = `
         <p class="titulo-imagem" >O quão Potterhead é você?</p>
     </div>
     <button class="botao-criacao-quizz" onclick="enviarQuizz()">Acessar Quizz</button>
-    <button class="botao-voltar" onclick="desabilitarCriacaoQuizz()">Voltar pra home</button>
+    <button class="botao-voltar" onclick="returnHome()">Voltar pra home</button>
 `;
