@@ -25,7 +25,7 @@ function renderizarTela2(){
     const tela = document.querySelector(".container-criacao-quizz");
     tela.innerHTML = tela3form2;
     renderizarPergunta(1);
-    renderizarExtra(qtdPerguntas);
+    renderizarExtra(qtdPerguntas-1);
 
     document.querySelector("form").addEventListener("submit", event =>{
         console.log("Preechimento da informações basicas do Quizz correta!");  
@@ -64,7 +64,7 @@ function renderizarTela3(){
     const tela = document.querySelector(".container-criacao-quizz");
     tela.innerHTML = tela3form3;
     renderizarNivel(1);
-    renderizarExtraNivel(qtdNiveis);
+    renderizarExtraNivel(qtdNiveis-1);
 
     document.querySelector("form").addEventListener("submit", event =>{
         console.log("Preechimento da informações basicas do Quizz correta!");  
@@ -121,7 +121,7 @@ function capturaPagina2(){
     const tela3 = document.querySelector(".container-criacao-quizz");
     const objeto = tela3.querySelector(".pergunta");
     
-    for(let i = 1;i<=qtdPerguntas;i++){
+    for(let i = 1;i<qtdPerguntas+1;i++){
         let tagPergunta = objeto.querySelector(".tagPergunta"+i);
         let nodeList = tagPergunta.querySelectorAll("input");
         let elements = Array.from(nodeList);
@@ -143,14 +143,14 @@ function capturaPagina2(){
         quizz.questions.push(creationQuestons(titulo,cor,questoes));
     }
 
-    console.log(quizz.questions);
+    console.log("questoes->"+ quizz.questions);
 }
 
 function capturaPagina3(){
     const tela3 = document.querySelector(".container-criacao-quizz");
     const objeto = tela3.querySelector(".nivel");
     
-    for(let i = 1;i<=qtdPerguntas;i++){
+    for(let i = 1;i<qtdNiveis+1;i++){
         let tagPergunta = objeto.querySelector(".tagNivel"+i);
         let nodeList = tagPergunta.querySelectorAll("input");
         let elements = Array.from(nodeList);
@@ -164,7 +164,7 @@ function capturaPagina3(){
         );
     }
 
-    console.log(quizz.levels);
+    console.log("Niveis->"+ quizz.levels);
 }
 
 //LINDA porem Objeto do post complexo demais...
