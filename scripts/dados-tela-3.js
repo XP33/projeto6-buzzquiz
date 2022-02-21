@@ -1,12 +1,12 @@
 let tela3form1 = `
     <p class="titulo-tela-criacao">Comece pelo começo</p>
     <form action="">
-    <div class="criacao-quizz">
-        <div class="caixa">
-            <input type="text" class="nome" placeholder="Título do seu quizz" minlength="20" maxlength="65" required>
-            <input type="url" class="url-image" placeholder="URL da imagem do seu quizz" required>
-            <input type="number" class="quantidade-perguntas" placeholder="Quantidade de perguntas do quizz" minlength="3" required>
-            <input type="number" class="quantidade-niveis" placeholder="Quantidade de níveis do quizz" minlength="2" required>
+        <div class="criacao-quizz">
+            <div class="caixa">
+                <input type="text" class="nome" placeholder="Título do seu quizz" minlength="20" maxlength="65" required>
+                <input type="url" class="url-image" placeholder="URL da imagem do seu quizz" required>
+                <input type="number" class="quantidade-perguntas" placeholder="Quantidade de perguntas do quizz "minlength="3" required>
+                <input type="number" class="quantidade-niveis" placeholder="Quantidade de níveis do quizz" minlength="2" required>
             </div>  
         </div>
 
@@ -43,7 +43,7 @@ function perguntaNumero(numero){
         <div class="caixa-pergunta tagPergunta${numero}">
             <p class="texto-tela-criacao">Pergunta ${numero}</p>
             <input type="text" class="titulo-quiz" placeholder="Título do seu quizz" minlength="20" required>
-            <input type="text" class="cor-fundo" placeholder="Cor de fundo da pergunta"  required>
+            <input type="text" class="cor-fundo" placeholder="Cor de fundo da pergunta" pattern="^#[0-9a-fA-F]{6}" required>
             <p class="texto-tela-criacao">Resposta correta</p>
             <input type="text" class="resposta-correta" placeholder="Resposta correta" required>
             <input type="url" class="url-imagem" placeholder="URL da imagem 1" required>
@@ -64,7 +64,7 @@ function perguntaNumero(numero){
 }
 
 
-//pattern="0[xX][0-9a-fA-F]+"
+//pattern="#+0[xX][0-9a-fA-F]+"
 let tela3form3 = `
     <p class="titulo-tela-criacao">Agora, decida os níveis!</p>
     <form action="">

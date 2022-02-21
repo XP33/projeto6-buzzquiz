@@ -3,7 +3,7 @@ const APIBUZZQUIZZENVIAR = "https://mock-api.driven.com.br/api/v4/buzzquizz/quiz
 
 
 function enviarQuizz(){
-    const requisicao = axios.post(APIBUZZQUIZZENVIAR, quizzTeste);
+    const requisicao = axios.post(APIBUZZQUIZZENVIAR, quizz);
     requisicao.then(tratarSucessoEnvioQuizz);
     requisicao.catch(tratarErroEnvioQuizz);
 }
@@ -11,6 +11,7 @@ function enviarQuizz(){
 function tratarSucessoEnvioQuizz(response){
     console.log("Seu Quizz foi enviado com sucesso meu amigo construtor de quizzes :)");
     salvarLocalStorage(response.data.id);
+    console.log(response.data.id);
 }
 
 function tratarErroEnvioQuizz(erro) {

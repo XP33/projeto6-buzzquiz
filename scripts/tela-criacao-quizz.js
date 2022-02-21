@@ -101,6 +101,7 @@ function sobreescreverNivel(elemento,numero){
 function renderizarTela4(){
     const tela = document.querySelector(".container-criacao-quizz");
     tela.innerHTML = criarPagina4();
+    enviarQuizz();
     console.log(quizz);
 }
 
