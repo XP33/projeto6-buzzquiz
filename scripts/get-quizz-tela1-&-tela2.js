@@ -64,7 +64,7 @@ function printAllQuizzes(response) {
   
   <section onclick="habilitarCriacaoQuizz()" class="you_quizzes hidden">
         <h1 class="titulo_grupo">Seus Quizzes</h1>
-        <img onclick="habilitarCriacaoQuizz()" src="./media/add_button.png" alt="Criar um novo Quizz">
+        <img onclick="habilitarCriacaoQuizz()" src="../media/add_button.png" alt="Criar um novo Quizz">
 </section><div class="fatherM"><div class=mediaQ>`
 
             let userQuizTemplate = `<article class="quizz_box quiz" id="${quiz.id}" onclick="openQuiz(this)">
