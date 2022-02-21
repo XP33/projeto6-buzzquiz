@@ -9,7 +9,7 @@ let userQuizzes = []
 let counterAnswer = 0
 
 let idsString = localStorage.getItem("listaQuizz")
-let idsArray= JSON.parse(idsString)
+let idsArray = JSON.parse(idsString)
 idsString = JSON.stringify(idsArray)
 
 function getAllQuizzes() {
@@ -17,48 +17,45 @@ function getAllQuizzes() {
     promise.then(printAllQuizzes);
 }
 
-function printAllQuizzes(response) {
-    let quizzesList = response.data;
+listaIdQuizz.push(7534);
 
+
+function printAllQuizzes(response) {
+
+    if (localStorage.getItem("listaQuizz").length == 0) {
+                const emptyQuizEl = document.querySelector(".first_quizz")
+                emptyQuizEl.classList.remove("hidden")
+                const userQuizTitleEl = document.querySelector(".you_quizzes")
+                userQuizTitleEl.classList.add("hidden")
+            } else {
+                const emptyQuizEl = document.querySelector(".first_quizz")
+                emptyQuizEl.classList.add("hidden")
+                const userQuizTitleEl = document.querySelector(".you_quizzes")
+                userQuizTitleEl.classList.remove("hidden")
+            }
+
+
+    let quizzesList = response.data;
     console.log(quizzesList)
 
-    // quizzesList = quizzesList.filter(filterUserQuizzes);
+    carregarLocalStrorage()
+
 
     const allQuizzesEl = document.querySelector(".all_quizzes")
-        allQuizzesEl.innerHTML =""
+    allQuizzesEl.innerHTML = ""
 
     quizzesList.forEach(quiz => {
-        let id = quiz.id;
-        let title = quiz.title;
-        let image = quiz.image;
 
-        let quizTemplate = `<article class="quizz_box quiz" id="${id}" onclick="openQuiz(this)">
-        <img src="${image}" alt="Quizz image" class="image_quizz"><h1 class="titulo_quizz">${title}</h1></article>`
+        console.log(quiz.id)
+        console.log(listaIdQuizz)
 
-        allQuizzesEl.innerHTML += quizTemplate
-    });
+        for (let i = 0; i < listaIdQuizz.length; i++) {
+ 
+        if (quiz.id == listaIdQuizz[i]) {
+            console.log("quiz esse aqui")
+            const userQuizzesEl2 = document.querySelector(".your_quizzes_group")
 
-    printUserQuizzes()
-}
-
-function filterUserQuizzes(quiz) {
-//   array.forEach(element => {
-//       for (let i = 0; i < quizzesList.length; i++) {
-//           if(quiz.id == )
-//   });
-//   }
-}
-
-console.log(userQuizzes)
-   console.log(idsArray)
-   console.log("Lista (existe) -> "+ localStorage.getItem("listaQuizz")); 
-   console.log(localStorage.getItem("listaQuizz").length)
-
-
-function printUserQuizzes() {
-    const userQuizzesEl = document.querySelector(".your_quizzes_group")
-
-    userQuizzesEl.innerHTML += `<article class="first_quizz hidden">
+            userQuizzesEl2.innerHTML += `<article class="first_quizz hidden">
     <h1>Você não criou nenhum quizz ainda :(</h1>
     <button onclick="habilitarCriacaoQuizz()">
       <h2>Criar Quizz</h2>
@@ -68,35 +65,84 @@ function printUserQuizzes() {
   <section class="you_quizzes hidden">
         <h1 class="titulo_grupo">Seus Quizzes</h1>
         <img onclick="addNewQuizz()" src="/media/add_button.png" alt="Criar um novo Quizz">
-      </section>`
- 
+</section>`
 
-    if (localStorage.getItem("listaQuizz").length == 0) {
-        const emptyQuizEl = document.querySelector(".first_quizz")
-        emptyQuizEl.classList.remove("hidden")
-        const userQuizTitleEl = document.querySelector(".you_quizzes")
-        userQuizTitleEl.classList.add("hidden")
-    }else{
-        const emptyQuizEl = document.querySelector(".first_quizz")
-        emptyQuizEl.classList.add("hidden")
-        const userQuizTitleEl = document.querySelector(".you_quizzes")
-        userQuizTitleEl.classList.remove("hidden")
+            let userQuizTemplate = `<article class="quizz_box quiz" id="${quiz.id}" onclick="openQuiz(this)">
+            <img src="${quiz.image}" alt="Quizz image" class="image_quizz"><h1 class="titulo_quizz">${quiz.title}</h1></article>`
+
+            userQuizzesEl2.innerHTML += userQuizTemplate
+
+
+
     }
- 
+        }
+            let id = quiz.id;
+            let title = quiz.title;
+            let image = quiz.image;
 
-    listaIdQuizz.forEach(quiz => {
-        let title = quiz.title;
-        let image = quiz.image;
-        let id = quiz.id;
+            let quizTemplate = `<article class="quizz_box quiz" id="${id}" onclick="openQuiz(this)"><img src="${image}" alt="Quizz image" class="image_quizz"><h1 class="titulo_quizz">${title}</h1></article>`
 
-        let userQuizTemplate = `<article class="quizz_box quiz" id="${id}" onclick="openQuiz(this)">
-        <img src="${image}" alt="Quizz image" class="image_quizz"><h1 class="titulo_quizz">${title}</h1></article>`
-
-        userQuizzesEl.innerHTML += userQuizTemplate
-    })
-
-    userQuizzes = []
+            allQuizzesEl.innerHTML += quizTemplate
+        
+        
+    });
 }
+// printUserQuizzes()
+
+
+// function filterUserQuizzes(quiz) {
+//     //   array.forEach(element => {
+//     //       for (let i = 0; i < quizzesList.length; i++) {
+//     //           if(quiz.id == )
+//     //   });
+//     //   }
+// }
+
+// console.log(userQuizzes)
+// console.log(idsArray)
+// console.log("Lista (existe) -> " + localStorage.getItem("listaQuizz"));
+// console.log(localStorage.getItem("listaQuizz").length)
+
+// function printUserQuizzes() {
+//     const userQuizzesEl = document.querySelector(".your_quizzes_group")
+
+//     userQuizzesEl.innerHTML += `<article class="first_quizz hidden">
+//     <h1>Você não criou nenhum quizz ainda :(</h1>
+//     <button onclick="habilitarCriacaoQuizz()">
+//       <h2>Criar Quizz</h2>
+//     </button>
+//   </article>
+  
+//   <section class="you_quizzes hidden">
+//         <h1 class="titulo_grupo">Seus Quizzes</h1>
+//         <img onclick="addNewQuizz()" src="/media/add_button.png" alt="Criar um novo Quizz">
+// </section>`
+
+//     if (localStorage.getItem("listaQuizz").length == 0) {
+//         const emptyQuizEl = document.querySelector(".first_quizz")
+//         emptyQuizEl.classList.remove("hidden")
+//         const userQuizTitleEl = document.querySelector(".you_quizzes")
+//         userQuizTitleEl.classList.add("hidden")
+//     } else {
+//         const emptyQuizEl = document.querySelector(".first_quizz")
+//         emptyQuizEl.classList.add("hidden")
+//         const userQuizTitleEl = document.querySelector(".you_quizzes")
+//         userQuizTitleEl.classList.remove("hidden")
+//     }
+
+//     listaIdQuizz.forEach(quiz => {
+//         let title = quiz.title;
+//         let image = quiz.image;
+//         let id = quiz.id;
+
+//         let userQuizTemplate = `<article class="quizz_box quiz" id="${id}" onclick="openQuiz(this)">
+//         <img src="${image}" alt="Quizz image" class="image_quizz"><h1 class="titulo_quizz">${title}</h1></article>`
+
+//         userQuizzesEl.innerHTML += userQuizTemplate
+//     })
+
+//     userQuizzes = []
+// }
 
 
 function openQuiz(quiz) {
