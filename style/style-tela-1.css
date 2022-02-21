@@ -151,3 +151,23 @@
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
     border-radius: 5px;
 }
+
+.caixa-quizz{
+    width: 100%;
+}
+
+@media (min-width: 1024px){
+    .tela_1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .all_quizzes{
+        width: 1051px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .quizz_box{
+        margin-left: 5px;
+    }
+}
