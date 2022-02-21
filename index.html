@@ -32,18 +32,19 @@
 <!------------------------------------- TELA 1 - QUIZZ GALERY ------------------------------------->
     <section class="tela_1">
 
-      <article class="first_quizz">
+      <div class="your_quizzes_group">
+      <article class="first_quizz hide">
         <h1>Você não criou nenhum quizz ainda :(</h1>
         <button onclick="habilitarCriacaoQuizz()">
           <h2>Criar Quizz</h2>
         </button>
       </article>
 
-
       <section class="you_quizzes">
         <h1 class="titulo_grupo">Seus Quizzes</h1>
         <img onclick="addNewQuizz()" src="/media/add_button.png" alt="Criar um novo Quizz">
       </section>
+    </div>
 
       <div class="caixa-quizz">
         <h1 class="titulo_grupo_all">Todos os Quizzes</h1>
@@ -83,13 +84,15 @@
   <!--Srcipts-->
 
 
-  <script src="./scripts/get-quizz-tela1-&-tela2.js"></script>
+
   <!-- <script src="./scripts/dados-tela-2.js"></script> -->
   <script src="./scripts/dados-tela-3.js"></script>
   <script src="./scripts/transcisao-tela.js"></script>
   <script src="./scripts/captura-dados-tela-3.js"></script>
   <script src="./scripts/tela-criacao-quizz.js"></script>
   <script src="./scripts/enviar-quizz.js"></script>
+
+  <script src="./scripts/get-quizz-tela1-&-tela2.js"></script>
   
   
 </body>
