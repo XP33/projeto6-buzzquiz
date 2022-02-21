@@ -2,7 +2,7 @@ let tela3form1 = `
     <p class="titulo-tela-criacao">Comece pelo começo</p>
     <form action="">
         <div class="criacao-quizz">
-            <div class="caixa">
+            <div class="caixa" data-identifier="question">
                 <input type="text" class="nome" placeholder="Título do seu quizz" minlength="20" maxlength="65" required>
                 <input type="url" class="url-image" placeholder="URL da imagem do seu quizz" required>
                 <input type="number" class="quantidade-perguntas" placeholder="Quantidade de perguntas do quizz " min="3" required>
@@ -31,7 +31,7 @@ function renderizarPerguntasExtras(numero){
     
     for(let i= 0; i<numero;i++){
         perguntas = perguntas  + `
-        <div class="pergunta-add pergunta${2+i}" onclick="sobreescreverPergunta(this,${2+i})"><p>Pergunta ${2+i}</p> <ion-icon name="open-outline"></ion-icon></div>
+        <div class="pergunta-add pergunta${2+i}" onclick="sobreescreverPergunta(this,${2+i})" data-identifier="expand"><p>Pergunta ${2+i}</p> <ion-icon name="open-outline"></ion-icon></div>
         `
     }
 
@@ -40,7 +40,7 @@ function renderizarPerguntasExtras(numero){
 
 function perguntaNumero(numero){
     let pergunta =  `
-        <div class="caixa-pergunta tagPergunta${numero}">
+        <div class="caixa-pergunta tagPergunta${numero}" data-identifier="question">
             <p class="texto-tela-criacao">Pergunta ${numero}</p>
             <input type="text" class="titulo-quiz" placeholder="Título do seu quizz" minlength="20" required>
             <input type="text" class="cor-fundo" placeholder="Cor de fundo da pergunta" pattern="^#[0-9a-fA-F]{6}" required>
@@ -78,7 +78,7 @@ let tela3form3 = `
 
 function nivelNumero(numero){
     let nivel = `
-        <div class="caixa-nivel tagNivel${numero}">
+        <div class="caixa-nivel tagNivel${numero}" data-identifier="level">
             <p class="texto-tela-criacao">Nivel ${numero}</p>
             <input type="text" class="nome" placeholder="Título do nível" minlength="10" required>
             <input type="number" class="acertos" placeholder="% de acerto mínima" min="0" max="100" required>
@@ -95,7 +95,7 @@ function renderizarNivelExtras(numero){
     
     for(let i= 0; i<numero;i++){
         nivel = nivel  + `
-        <div class="nivel-add" onclick="sobreescreverNivel(this,${2+i})"><p>Nivel ${2+i}</p><ion-icon name="open-outline"></ion-icon></div>
+        <div class="nivel-add" onclick="sobreescreverNivel(this,${2+i})" data-identifier="expand"><p>Nivel ${2+i}</p><ion-icon name="open-outline"></ion-icon></div>
         `
     }
 
