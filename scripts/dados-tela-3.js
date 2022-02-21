@@ -5,8 +5,8 @@ let tela3form1 = `
             <div class="caixa">
                 <input type="text" class="nome" placeholder="Título do seu quizz" minlength="20" maxlength="65" required>
                 <input type="url" class="url-image" placeholder="URL da imagem do seu quizz" required>
-                <input type="number" class="quantidade-perguntas" placeholder="Quantidade de perguntas do quizz "minlength="3" required>
-                <input type="number" class="quantidade-niveis" placeholder="Quantidade de níveis do quizz" minlength="2" required>
+                <input type="number" class="quantidade-perguntas" placeholder="Quantidade de perguntas do quizz " min="3" required>
+                <input type="number" class="quantidade-niveis" placeholder="Quantidade de níveis do quizz"  min="3" required>
             </div>  
         </div>
 
