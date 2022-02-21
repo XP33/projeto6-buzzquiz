@@ -3,7 +3,7 @@ const APIBUZZQUIZZENVIAR = "https://mock-api.driven.com.br/api/v4/buzzquizz/quiz
 
 
 function enviarQuizz(){
-    const requisicao = axios.post(APIBUZZQUIZZENVIAR, quizz);
+    const requisicao = axios.post(APIBUZZQUIZZENVIAR, quizzTeste);
     requisicao.then(tratarSucessoEnvioQuizz);
     requisicao.catch(tratarErroEnvioQuizz);
 }

@@ -1,7 +1,7 @@
 function habilitarCriacaoQuizz(){
     habilitarTela("tela_3");
     desabilitarTela("tela_1");
-    renderizarTela2();
+    renderizarTela1();
 }
 
 function returnHome(){
@@ -100,7 +100,7 @@ function sobreescreverNivel(elemento,numero){
 
 function renderizarTela4(){
     const tela = document.querySelector(".container-criacao-quizz");
-    tela.innerHTML = tela3form4;
+    tela.innerHTML = criarPagina4();
     console.log(quizz);
 }
 

@@ -103,14 +103,18 @@ function renderizarNivelExtras(numero){
     return nivel;
 }
 
-let tela3form4 = `
-    <p class="titulo-tela-criacao">Seu quizz está pronto!</p>
-    <div class = "capa-imagem-quizz" style="background-image:url('${quizz.image}') ;">
-        <p class="titulo-imagem" >${quizz.title}</p>
-    </div>
-    <button class="botao-criacao-quizz" onclick="enviarQuizz()">Acessar Quizz</button>
-    <button class="botao-voltar" onclick="returnHome()">Voltar pra home</button>
-`;
+function criarPagina4(){
+    tela = `
+        <p class="titulo-tela-criacao">Seu quizz está pronto!</p>
+        <div class = "capa-imagem-quizz" style="background-image:url('${quizz.image}') ;">
+            <p class="titulo-imagem" >${quizz.title}</p>
+        </div>
+        <button class="botao-criacao-quizz" onclick="enviarQuizz()">Acessar Quizz</button>
+        <button class="botao-voltar" onclick="returnHome()">Voltar pra home</button>
+    `;  
+
+    return tela;
+}
 
 /*
 let tela3form4 = `
