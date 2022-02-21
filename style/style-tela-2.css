@@ -232,3 +232,17 @@
 .hidden{
     display: none;
 }
+
+.correct {
+  color: #009c22;
+  pointer-events: none;
+}
+
+.wrong {
+  color: #ff4b4b;
+  pointer-events: none;
+}
+
+.not-selected {
+  opacity: 30%;
+}

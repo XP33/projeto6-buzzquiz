@@ -1,6 +1,11 @@
 const API_BUZZQUIZZ = "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes";
 
-let quiz = null;
+let correctAnswerPercentage = 0;
+let eachAnswerPercentage = 0;
+
+let quiz = null
+
+let counterAnswer = 0
 
 function getAllQuizzes() {
     let promise = axios.get(API_BUZZQUIZZ);
@@ -74,29 +79,87 @@ function displayQuiz(response) {
     </div>
     </section><section class="quiz__questions questions">${templateQuizQuestions}</section></div>
     
-    <nav class="result_box">
-    <div class="percentage_box">
-      <h1>88% de acerto: Você é praticamente um aluno de Hogwarts!</h1>
-    </div>
-    
-    <img src="/media/green.jpg" alt="">
-    
-    <h2>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.</h2>
-    </nav>
-    
-    <nav>
-    <button class="reiniciar_quizz">
-      <h1>Reiniciar Quizz</h1>
-    </button>
-    
-    <div class="voltar_home" onclick="returnHome()">
-      <h1>Voltar pra home </h1>
-    </div>
-    </nav>`
+    <nav class="result_box"></nav>`
 
     quizPageEl.innerHTML += templateQuizGeneralInfo
 
 }
+
+function clickCardAnswer(answer) {
+    let totalQuestions = document.querySelectorAll(".full_question_box").length
+    counterAnswer += 1
+    eachAnswerPercentage = 100 / totalQuestions
+
+
+
+    // Get all siblings of the answer and check the answer
+    let siblingAnswerEl = answer.parentNode.firstChild
+    while (siblingAnswerEl !== null) {
+        if (siblingAnswerEl === answer) {
+            if (answer.getAttribute("data-iscorrectanswer") === "true") {
+                correctAnswerPercentage += eachAnswerPercentage
+                answer.classList.add("correct")
+            } else {
+                answer.classList.add("wrong")
+            }
+        } else {
+            siblingAnswerEl.classList.add("not-selected");
+
+            if (siblingAnswerEl.getAttribute("data-iscorrectanswer") === "true") {
+                siblingAnswerEl.classList.add("correct");
+            } else { siblingAnswerEl.classList.add("wrong"); }
+        }
+        siblingAnswerEl = siblingAnswerEl.nextElementSibling;
+    };
+
+    // Scroll to next question after 2 seconds
+    let questionEl = answer.parentNode.parentNode.nextElementSibling
+    if (questionEl !== null) {
+        setTimeout(() => questionEl.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" }), 50)
+    }
+
+    // Calls the result function when counter gets to total of questions
+    if (counterAnswer === totalQuestions) {
+        // Get the integer of the percentage
+        let fixedPercentage = Math.ceil(correctAnswerPercentage)
+        setTimeout(showResult, 500, fixedPercentage)
+    }
+}
+
+function showResult(correctAnswerPercentage) {
+    let levels = quiz.levels;
+
+    let templateResult = ""
+
+    levels.forEach(level => {
+        if (correctAnswerPercentage >= level.minValue) {
+            templateResult = `
+            <div class="percentage_box">
+              <h1>${correctAnswerPercentage}% de acerto: ${level.title}</h1>
+            </div>
+            
+            <img src=${level.image} alt="">
+            
+            <h2>${level.text}</h2>
+            </nav>
+            
+            <nav>
+            <button class="reiniciar_quizz">
+              <h1>Reiniciar Quizz</h1>
+            </button>
+            
+            <div class="voltar_home" onclick="returnHome()">
+              <h1>Voltar pra home </h1>
+            </div>`
+        }
+    })
+
+    const quizResultEl = document.querySelector(".result_box");
+
+    quizResultEl.innerHTML += templateResult;
+    quizResultEl.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+}
+
 
 
 // Initiate Functions

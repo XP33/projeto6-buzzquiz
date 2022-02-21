@@ -1,41 +1,55 @@
-//Pagina 1 - 
-let infoBasico = {
-    titulo: null,
-    url: null,
-    qtdPerguntas: null,
-    qtdNiveis: null
+//variavel controle
+qtdPerguntas = 2;
+qtdNiveis = 2;
+
+//POST
+quizz = {
+	title: "Título do quizz",
+	image: "https://http.cat/411.jpg",
+	questions: [
+		{
+			title: "Título da pergunta 1",
+			color: "#123456",
+			answers: []
+        }],
+	levels: []
 };
 
-//Pagina 2
-let infoPerguntas = {
-    titulo: null,
-    cor: null,
-    respostaIncorreta1: null,
-    urlImagem1: null,
-    respostaIncorreta2: null,
-    urlImagem2: null,
-    respostaIncorreta3: null,
-    urlImagem3: null
+function creationQuestons(title,color,answers){
+    return {
+        title,
+        color,
+        answers
+    };
+}
+
+function creationAnswers(text,image,isCorrectAnswer){
+    return {
+        text,
+        image,
+        isCorrectAnswer
+    };
+}
+
+pergunta = {
+        text: "Texto da resposta 1",
+        image: "https://http.cat/411.jpg",
+        isCorrectAnswer: true
 };
 
-//Pagina 3 
-let infoNiveis = {
-    Nivel1 : {
-        titulo: null,
-        acertosMinimos: null,
-        url: null,
-        descrisao: null
-    },
-    Nivel2 : {
-        titulo: null,
-        acertosMinimos: null,
-        url: null,
-        descrisao: null
-    },
-    Nivel3 : {
-        titulo: null,
-        acertosMinimos: null,
-        url: null,
-        descrisao: null
+
+nivel = {
+    title: "Título do nível 1",
+    image: "https://http.cat/411.jpg",
+    text: "Descrição do nível 1",
+    minValue: 0
+}
+
+function creationLevel(title,image,text,minValue){
+    return {
+        title,
+        image,
+        text,
+        minValue 
     }
-};
+}
