@@ -26,20 +26,6 @@ function creationAnswers(text,image,isCorrectAnswer){
     };
 }
 
-pergunta = {
-        text: "Texto da resposta 1",
-        image: "https://http.cat/411.jpg",
-        isCorrectAnswer: true
-};
-
-
-nivel = {
-    title: "Título do nível 1",
-    image: "https://http.cat/411.jpg",
-    text: "Descrição do nível 1",
-    minValue: 0
-}
-
 function creationLevel(title,image,text,minValue){
     return {
         title,
@@ -48,6 +34,9 @@ function creationLevel(title,image,text,minValue){
         minValue 
     }
 }
+
+
+let listaIdQuizz = [];
 
 quizzTeste = {
 	title: "Quizz do tomate Dev",
