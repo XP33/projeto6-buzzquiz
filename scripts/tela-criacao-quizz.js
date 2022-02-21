@@ -1,7 +1,7 @@
 function habilitarCriacaoQuizz(){
     habilitarTela("tela_3");
     desabilitarTela("tela_1");
-    renderizarTela1();
+    renderizarTela2();
 }
 
 function returnHome(){
