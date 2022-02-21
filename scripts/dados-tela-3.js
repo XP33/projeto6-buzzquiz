@@ -64,7 +64,6 @@ function perguntaNumero(numero){
 }
 
 
-//pattern="#+0[xX][0-9a-fA-F]+"
 let tela3form3 = `
     <p class="titulo-tela-criacao">Agora, decida os níveis!</p>
     <form action="">
@@ -115,15 +114,3 @@ function criarPagina4(){
 
     return tela;
 }
-
-/*
-let tela3form4 = `
-    <p class="titulo-tela-criacao">Seu quizz está pronto!</p>
-    <div class = "capa-imagem-quizz" style="background-image:url('./media/Rectangle 34.png') ;">
-        <p class="titulo-imagem" >O quão Potterhead é você?</p>
-    </div>
-    <button class="botao-criacao-quizz" onclick="enviarQuizz()">Acessar Quizz</button>
-    <button class="botao-voltar" onclick="returnHome()">Voltar pra home</button>
-`;
-
-*/

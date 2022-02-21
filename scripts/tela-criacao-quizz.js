@@ -121,7 +121,7 @@ function capturaPagina2(){
     const tela3 = document.querySelector(".container-criacao-quizz");
     const objeto = tela3.querySelector(".pergunta");
     
-    for(let i = 1;i<=qtdPerguntas;i++){
+    for(let i = 1;i<qtdPerguntas;i++){
         let tagPergunta = objeto.querySelector(".tagPergunta"+i);
         let nodeList = tagPergunta.querySelectorAll("input");
         let elements = Array.from(nodeList);
