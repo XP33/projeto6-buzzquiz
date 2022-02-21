@@ -23,9 +23,7 @@ function printAllQuizzes(response) {
         let levels = quiz.levels;
 
         let quizTemplate = `<article class="quizz_box quiz" id="${id}" onclick="openQuiz(this)">
-        <img src="${image}" alt="Quizz image" class="image_quizz">
-        <h1 class="titulo_quizz">${title}</h1>
-    </article>`
+        <img src="${image}" alt="Quizz image" class="image_quizz"><h1 class="titulo_quizz">${title}</h1></article>`
 
         const allQuizzesEl = document.querySelector(".all_quizzes")
         allQuizzesEl.innerHTML += quizTemplate
@@ -65,21 +63,18 @@ function displayQuiz(response) {
         let answers = question.answers.sort(() => Math.random() - 0.5)
 
         answers.forEach(answer => {
-            templateQuizAnswers += `<div class="option" onclick="clickCardAnswer(this)" data-isCorrectAnswer="${answer.isCorrectAnswer}"><img class="img_option" src=${answer.image} alt=""><p class="name_option">${answer.text}</p></div>`
+            templateQuizAnswers += `<div class="option" onclick="clickCardAnswer(this)" data-isCorrectAnswer="${answer.isCorrectAnswer}">
+            <img class="img_option" src=${answer.image} alt=""><p class="name_option">${answer.text}</p></div>`
         })
 
-        templateQuizQuestions += `<nav class="full_question_box" id="${questions.indexOf(question)}"><div class="pergunta_box"><h1>${question.title}</h1></div><div class="options_box">${templateQuizAnswers}</div></nav>`
+        templateQuizQuestions += `<nav class="full_question_box" id="${questions.indexOf(question)}">
+        <div class="pergunta_box"><h1>${question.title}</h1></div><div class="options_box">${templateQuizAnswers}</div></nav>`
 
         templateQuizAnswers = ""
     })
 
-    let templateQuizGeneralInfo = `<div class="banner">
-    <img src="${image}"class="banner"></img>
-    <h1>${title}</h1>
-    </div>
-    </section><section class="quiz__questions questions">${templateQuizQuestions}</section></div>
-    
-    <nav class="result_box"></nav>`
+    let templateQuizGeneralInfo = `<div class="banner"><img src="${image}"class="banner"></img><h1>${title}</h1></div></section>
+    <section class="quiz__questions questions">${templateQuizQuestions}</section></div><nav class="result_box"></nav>`
 
     quizPageEl.innerHTML += templateQuizGeneralInfo
 
@@ -92,9 +87,6 @@ function clickCardAnswer(answer) {
     counterAnswer += 1
     eachAnswerPercentage = 100 / totalQuestions
 
-
-
-    // Get all siblings of the answer and check the answer
     let siblingAnswerEl = answer.parentNode.firstChild
     while (siblingAnswerEl !== null) {
         if (siblingAnswerEl === answer) {
@@ -114,15 +106,12 @@ function clickCardAnswer(answer) {
         siblingAnswerEl = siblingAnswerEl.nextElementSibling;
     };
 
-    // Scroll to next question after 2 seconds
     let questionEl = answer.parentNode.parentNode.nextElementSibling
     if (questionEl !== null) {
         setTimeout(() => questionEl.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" }), 50)
     }
 
-    // Calls the result function when counter gets to total of questions
     if (counterAnswer === totalQuestions) {
-        // Get the integer of the percentage
         let fixedPercentage = Math.ceil(correctAnswerPercentage)
         setTimeout(showResult, 500, fixedPercentage)
     }
@@ -136,23 +125,10 @@ function showResult(correctAnswerPercentage) {
     levels.forEach(level => {
         if (correctAnswerPercentage >= level.minValue) {
             templateResult = `
-            <div class="percentage_box">
-              <h1>${correctAnswerPercentage}% de acerto: ${level.title}</h1>
-            </div>
-            
-            <img src=${level.image} alt="">
-            
-            <h2>${level.text}</h2>
-            </nav>
-            
-            <nav>
-            <button class="reiniciar_quizz">
-              <h1>Reiniciar Quizz</h1>
-            </button>
-            
-            <div class="voltar_home" onclick="returnHome()">
-              <h1>Voltar pra home </h1>
-            </div>`
+            <div class="percentage_box"><h1>${correctAnswerPercentage}% de acerto: ${level.title}</h1></div>
+            <img src=${level.image} alt=""><h2>${level.text}</h2>
+            </nav><nav><button class="reiniciar_quizz"><h1>Reiniciar Quizz</h1></button>
+            <div class="voltar_home" onclick="returnHome()"><h1>Voltar pra home </h1></div>`
         }
     })
 
