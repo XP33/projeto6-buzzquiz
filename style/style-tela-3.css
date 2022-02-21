@@ -14,7 +14,6 @@
 .container-criacao-quizz{
     background-color: #E5E5E5;
     width: 100%;
-    height: 110vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,8 +30,7 @@
 }
 
 .criacao-quizz{
-    margin-top: 600px;
-    background-color: #FFFFFF;
+    background-color: #E5E5E5;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -95,12 +93,19 @@
     height: 800px;
 }
 .nivel{
+    background-color: #FFFFFF;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+.caixa{
+    background-color: #FFFFFF;  
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .caixa-nivel{
     width: 100%;
     display: flex;
@@ -124,6 +129,7 @@
     margin-top: 27px;
 }
 .pergunta{
+    background-color: #FFFFFF;
     width: 100%;
     display: flex;
     flex-direction: column;

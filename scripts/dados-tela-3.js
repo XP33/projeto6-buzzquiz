@@ -2,12 +2,13 @@ let tela3form1 = `
     <p class="titulo-tela-criacao">Comece pelo começo</p>
     <form action="">
     <div class="criacao-quizz">
-
-        <input type="text" class="nome" placeholder="Título do seu quizz" minlength="20" maxlength="65" required>
-        <input type="url" class="url-image" placeholder="URL da imagem do seu quizz" required>
-        <input type="number" class="quantidade-perguntas" placeholder="Quantidade de perguntas do quizz" minlength="3" required>
-        <input type="number" class="quantidade-niveis" placeholder="Quantidade de níveis do quizz" minlength="2" required>
-        </div>  
+        <div class="caixa">
+            <input type="text" class="nome" placeholder="Título do seu quizz" minlength="20" maxlength="65" required>
+            <input type="url" class="url-image" placeholder="URL da imagem do seu quizz" required>
+            <input type="number" class="quantidade-perguntas" placeholder="Quantidade de perguntas do quizz" minlength="3" required>
+            <input type="number" class="quantidade-niveis" placeholder="Quantidade de níveis do quizz" minlength="2" required>
+            </div>  
+        </div>
 
         <button class="botao-criacao-quizz" type="submit">Prosseguir pra criar perguntas</button>
     </form>
@@ -104,9 +105,21 @@ function renderizarNivelExtras(numero){
 
 let tela3form4 = `
     <p class="titulo-tela-criacao">Seu quizz está pronto!</p>
+    <div class = "capa-imagem-quizz" style="background-image:url('${quizz.image}') ;">
+        <p class="titulo-imagem" >${quizz.title}</p>
+    </div>
+    <button class="botao-criacao-quizz" onclick="enviarQuizz()">Acessar Quizz</button>
+    <button class="botao-voltar" onclick="returnHome()">Voltar pra home</button>
+`;
+
+/*
+let tela3form4 = `
+    <p class="titulo-tela-criacao">Seu quizz está pronto!</p>
     <div class = "capa-imagem-quizz" style="background-image:url('./media/Rectangle 34.png') ;">
         <p class="titulo-imagem" >O quão Potterhead é você?</p>
     </div>
     <button class="botao-criacao-quizz" onclick="enviarQuizz()">Acessar Quizz</button>
     <button class="botao-voltar" onclick="returnHome()">Voltar pra home</button>
 `;
+
+*/

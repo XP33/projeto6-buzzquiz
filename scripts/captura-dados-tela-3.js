@@ -1,6 +1,6 @@
 //variavel controle
-qtdPerguntas = 0;
-qtdNiveis = 0;
+qtdPerguntas = 2;
+qtdNiveis = 2;
 
 //POST
 quizz = {
